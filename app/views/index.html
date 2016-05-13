@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title></title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize_icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="/static/js/jquery-2.2.3.js"></script>
+	<script src="/static/js/jquery-ui.js"></script>
+	<script src="/static/js/materialize.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body>
+<dir class="container">
+	<h3>Products</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in items %}
+			<tr>
+				<td>{{item['name']}}</td>
+				<td>{{item['description']}}</td>
+				<td>${{item['price']}}</td>
+				<td><a href="/show/{{item['id']}}">Show</a> | <a href="/edit/{{item['id']}}">Edit</a> |
+				<form class="removebtn" action="/delete" method="post">
+					<input type="hidden" name="id" value="{{item['id']}}" />
+				<button action="submit" class="btn blue">Remove</button>
+				</form></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<p><a href="/new">Add a new product</a></p>
+</dir>
+</body>
+</html>

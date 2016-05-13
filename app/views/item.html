@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title>Product {{item['name']}}</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize_icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="/static/js/jquery-2.2.3.js"></script>
+	<script src="/static/js/jquery-ui.js"></script>
+	<script src="/static/js/materialize.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body>
+	<div class="container">
+		<h3>Product {{item[0]['id']}}</h3>
+		<div class="row">
+			<ul class="col s2">
+				<li>Name:</li>
+				<li>Description:</li>
+				<li>Price:</li>
+			</ul>
+			<ul class="col s10">
+				<li>{{item[0]['name']}}</li>
+				<li>{{item[0]['description']}}</li>
+				<li>${{item[0]['price']}}</li>
+			</ul>
+		</div>
+		<p><a href="/edit/{{item[0]['id']}}">Edit</a> | <a href="/">Back</a></p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title>Add New Item</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize_icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="/static/js/jquery-2.2.3.js"></script>
+	<script src="/static/js/jquery-ui.js"></script>
+	<script src="/static/js/materialize.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body>
+	<div class="container">
+		<h3>Add a new product</h3>
+		<form action="/add_new" method="post">
+			<div class="row">
+				<label>Name</label>
+				<input type="text" name="name" />
+			</div>
+			<div class="row">
+				<label>Description</label>
+				<input type="text" name="description" />
+			</div>
+			<div class="row">
+				<label>Price</label>
+				<input type="text" name="price" />
+			</div>
+			<div class="row">
+				<button class="btn blue" action="submit">Create</button>
+			</div>
+		</form>
+		<p><a href="/">Go back</a></p>
+	</div>
+</body>
+</html>
